@@ -1,0 +1,132 @@
+@use './functions.scss' as f;
+
+// VARIABLES
+
+// Colors:
+$white: #ffffff;
+$black: #000000;
+// Blues:
+$blue-950: #10141e;
+$blue-900: #161d2f;
+$blue-500: #5a698f;
+// Red:
+$red-500: #fc4747;
+// Gradient
+$gradient: linear-gradient(to bottom, rgba($black, 0%), rgba($black, 75%));
+
+// Typography
+// font-weight
+$fweight-light: 300;
+$fweight-medium: 500;
+// font-size
+$fsize-32: f.rem(32);
+$fsize-24: f.rem(24);
+$fsize-20: f.rem(20);
+$fsize-18: f.rem(18);
+$fsize-16: f.rem(16);
+$fsize-15: f.rem(15);
+$fsize-14: f.rem(14);
+$fsize-13: f.rem(13);
+$fsize-12: f.rem(12);
+$fsize-11: f.rem(11);
+// letter-spacing
+$lspacing--0-5: f.em(-0.5);
+$lspacing-0: f.em(0);
+$lspacing--0-3: f.em(-0.3);
+
+// Spacing
+$spacing-0000: f.em(0);
+$spacing-0100: f.em(8);
+$spacing-0200: f.em(16);
+$spacing-0300: f.em(14);
+$spacing-0400: f.em(32);
+$spacing-0500: f.em(40);
+$spacing-0700: f.em(56);
+$spacing-0900: f.em(72);
+$spacing-1000: f.em(80);
+
+// RESETS
+* {
+  word-break: break-all;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+// DEFAULTS
+html,
+body {
+  height: 100%;
+
+  font-weight: $fweight-medium;
+  font-family: 'Outfit';
+  font-size: 16px;
+  line-height: 1.25;
+  color: rgba($white, 1);
+
+  background-color: rgba($blue-950, 1);
+}
+
+// TEXT CSS SELECTORS
+.text__heading {
+  font-weight: $fweight-light;
+  font-size: $fsize-20;
+  letter-spacing: $lspacing--0-3;
+}
+
+.text__searchbar {
+  font-weight: $fweight-light;
+  font-size: $fsize-16;
+  letter-spacing: $lspacing-0;
+}
+
+.text__title--trending {
+  font-weight: $fweight-medium;
+  font-size: $fsize-15;
+  letter-spacing: $lspacing-0;
+}
+
+.text__title {
+  font-weight: $fweight-medium;
+  font-size: $fsize-14;
+  letter-spacing: $lspacing-0;
+}
+
+.text__details--trending {
+  font-weight: $fweight-light;
+  font-size: $fsize-12;
+  letter-spacing: $lspacing-0;
+}
+
+.text__details {
+  font-weight: $fweight-light;
+  font-size: $fsize-11;
+  letter-spacing: $lspacing-0;
+}
+
+@media (min-width: f.em(700)) {
+  .text__heading {
+    font-size: $fsize-32;
+    letter-spacing: $lspacing--0-5;
+  }
+
+  .text__searchbar {
+    font-size: $fsize-24;
+  }
+
+  .text__title--trending {
+    font-size: $fsize-24;
+  }
+
+  .text__title {
+    font-size: $fsize-18;
+  }
+
+  .text__details--trending {
+    font-size: $fsize-15;
+  }
+
+  .text__details {
+    font-size: $fsize-13;
+  }
+}
