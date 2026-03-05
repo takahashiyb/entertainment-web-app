@@ -1,11 +1,17 @@
 <script lang="ts" setup>
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
+import { useRoute } from 'vue-router'
 
-const isSelected = ref('movies')
+const route = useRoute()
 
-function switchNavHighlight(current: string) {
-  isSelected.value = current
-}
+const isSelected = ref('')
+
+watch(
+  () => route.name,
+  (newName) => {
+    isSelected.value = newName as string
+  },
+)
 </script>
 
 <template>
@@ -17,7 +23,6 @@ function switchNavHighlight(current: string) {
             src="/src/assets/icons/icon-nav-home.svg"
             alt="nav icon for home"
             :class="{ selected: isSelected === 'home' }"
-            @click="switchNavHighlight('home')"
           />
         </RouterLink>
       </li>
@@ -27,7 +32,6 @@ function switchNavHighlight(current: string) {
             src="/src/assets/icons/icon-nav-movies.svg"
             alt="nav icon for movies"
             :class="{ selected: isSelected === 'movies' }"
-            @click="switchNavHighlight('movies')"
           />
         </RouterLink>
       </li>
@@ -37,7 +41,6 @@ function switchNavHighlight(current: string) {
             src="/src/assets/icons/icon-nav-tv-series.svg"
             alt="nav icon for tv series"
             :class="{ selected: isSelected === 'tvseries' }"
-            @click="switchNavHighlight('tvseries')"
           />
         </RouterLink>
       </li>
@@ -47,7 +50,6 @@ function switchNavHighlight(current: string) {
             src="/src/assets/icons/icon-nav-bookmark.svg"
             alt="nav icon for bookmarks"
             :class="{ selected: isSelected === 'bookmarks' }"
-            @click="switchNavHighlight('bookmarks')"
           />
         </RouterLink>
       </li>
@@ -56,14 +58,14 @@ function switchNavHighlight(current: string) {
 </template>
 
 <style lang="scss" scoped>
-@import '@/assets/styles/main.scss';
+@use '@/assets/styles/main.scss' as v;
 
 nav > ul {
   height: 100%;
   list-style-type: none;
 
   display: flex;
-  gap: $spacing-0300;
+  gap: v.$spacing-0300;
 }
 
 nav ul li img {
