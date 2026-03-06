@@ -30,6 +30,10 @@ onBeforeMount(async () => {
 @use '@/assets/styles/main.scss' as v;
 
 header {
+  position: sticky;
+  top: 0;
+  z-index: 99;
+
   background-color: rgba(v.$blue-900, 1);
   height: v.$spacing-0700;
 
