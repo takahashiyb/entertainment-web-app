@@ -68,13 +68,14 @@ body {
 }
 
 // TEXT CSS SELECTORS
-.text__heading {
+h2 {
   font-weight: $fweight-light;
   font-size: $fsize-20;
   letter-spacing: $lspacing--0-3;
 }
 
 .text__searchbar {
+  color: $white;
   font-weight: $fweight-light;
   font-size: $fsize-16;
   letter-spacing: $lspacing-0;
@@ -105,7 +106,7 @@ body {
 }
 
 @media (min-width: f.em(700)) {
-  .text__heading {
+  h2 {
     font-size: $fsize-32;
     letter-spacing: $lspacing--0-5;
   }
