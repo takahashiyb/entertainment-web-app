@@ -1,8 +1,11 @@
 <script lang="ts" setup>
+import { useDataStore } from '@/stores/data'
 import { ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 
 const route = useRoute()
+
+const data = useDataStore()
 
 const isRoute = ref('')
 
@@ -24,7 +27,12 @@ const routePlaceholders: { [index: string]: string } = {
   <section>
     <img src="/src/assets/icons/icon-search.svg" alt="" />
     <label>
-      <input class="text__searchbar" type="text" :placeholder="routePlaceholders[isRoute]" />
+      <input
+        class="text__searchbar"
+        type="text"
+        :placeholder="routePlaceholders[isRoute]"
+        v-model="data.searchText"
+      />
     </label>
   </section>
 </template>
