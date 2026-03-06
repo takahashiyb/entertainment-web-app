@@ -1,6 +1,15 @@
 <script setup lang="ts">
+import { onBeforeMount } from 'vue'
 import NavBar from './components/NavBar.vue'
 import SearchBar from './components/SearchBar.vue'
+import { useDataStore } from './stores/data'
+
+const data = useDataStore()
+
+onBeforeMount(async () => {
+  const res = await fetch('/assets/data/data.json')
+  data.json = await res.json()
+})
 </script>
 
 <template>
