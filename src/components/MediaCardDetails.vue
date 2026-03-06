@@ -2,15 +2,15 @@
 import { computed } from 'vue'
 
 const props = defineProps({
-  type: {
+  cardType: {
     type: String,
-    default: 'common',
+    default: 'regular',
   },
   media: { type: String, default: 'movie' },
 })
 
 const textType = computed(() => {
-  if (props.type === 'trending') {
+  if (props.cardType === 'trending') {
     return {
       detail: 'text__details--trending',
       title: 'text__title--trending',
