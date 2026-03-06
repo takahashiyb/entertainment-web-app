@@ -6,7 +6,7 @@ const props = defineProps({
     type: String,
     default: 'regular',
   },
-  media: { type: String, default: 'movie' },
+  mediaData: { type: Object, required: true },
 })
 
 const textType = computed(() => {
@@ -31,31 +31,38 @@ const textType = computed(() => {
 </script>
 <template>
   <div class="details" :class="textType['position']">
-    <p :class="textType['detail']">year</p>
-    <p :class="textType['detail']">•</p>
-    <div class="media">
-      <img
-        v-if="props.media === 'movie'"
-        src="@/assets/icons/icon-category-movie.svg"
-        alt="movie card icon"
-      />
-      <img
-        v-if="props.media === 'tvseries'"
-        src="@/assets/icons/icon-category-tv.svg"
-        alt="tv card icon"
-      />
-      <p :class="textType['detail']">{{ props.media }}</p>
+    <div class="container">
+      <p :class="textType['detail']">{{ props.mediaData.year }}</p>
+      <p :class="textType['detail']">•</p>
+      <div class="media">
+        <img
+          v-if="props.mediaData.category === 'movie'"
+          src="@/assets/icons/icon-category-movie.svg"
+          alt="movie card icon"
+        />
+        <img
+          v-if="props.mediaData.category === 'tvseries'"
+          src="@/assets/icons/icon-category-tv.svg"
+          alt="tv card icon"
+        />
+        <p :class="textType['detail']">{{ props.mediaData.category }}</p>
+      </div>
+      <p :class="textType['detail']">•</p>
+      <p :class="textType['detail']">{{ props.mediaData.rating }}</p>
     </div>
-    <p :class="textType['detail']">•</p>
-    <p :class="textType['detail']">rating</p>
-    <h3 :class="textType['title']">Title</h3>
+    <h3 :class="[textType['title'], 'title']">{{ props.mediaData.title }}</h3>
   </div>
 </template>
 <style lang="scss" scoped>
 @use '@/assets/styles/main.scss' as v;
 .details {
   display: grid;
-  grid-template-columns: repeat(5, max-content);
+  gap: v.$spacing-0100;
+  width: 100%;
+}
+
+.container {
+  display: flex;
   gap: v.$spacing-0100;
 }
 
@@ -66,11 +73,22 @@ const textType = computed(() => {
 
 .title {
   grid-column: 1 / -1;
+  grid-row: 2;
+  column-span: 1 / -1;
+
+  white-space: nowrap;
 }
 
 .inside {
+  background-image: v.$gradient;
+
   position: absolute;
-  bottom: 16px;
-  left: 16px;
+  bottom: 0;
+  left: 0;
+
+  padding-left: 16px;
+  padding-bottom: 16px;
+
+  border-radius: 0 0 8px 8px;
 }
 </style>

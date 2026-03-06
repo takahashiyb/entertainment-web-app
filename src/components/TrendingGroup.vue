@@ -23,12 +23,10 @@ const data = useDataStore()
   scrollbar-width: none;
 
   display: flex;
-  align-items: stretch;
   gap: v.$spacing-0200;
 }
 
-.container > * {
+.container > div {
   height: 140px;
-  width: 240px;
 }
 </style>
