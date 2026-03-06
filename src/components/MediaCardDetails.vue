@@ -11,33 +11,40 @@ const props = defineProps({
 
 const textType = computed(() => {
   if (props.type === 'trending') {
-    return { detail: 'text__details', title: 'text__title' } as { detail: string; title: string }
+    return {
+      detail: 'text__details--trending',
+      title: 'text__title--trending',
+      position: 'inside',
+    } as {
+      detail: string
+      title: string
+      position: string
+    }
   }
 
-  return { detail: 'text__details', title: 'text__title' } as {
+  return { detail: 'text__details', title: 'text__title', position: 'normal' } as {
     detail: string
     title: string
+    position: string
   }
 })
-
-const mediaType: { [index: string]: string } = { movie: 'movie', tvseries: 'tv' }
-
-const mediaIcon = import.meta.glob('@/assets/icons/icon-category-*.svg', {
-  eager: true,
-}) as Record<string, { default: string }>
 </script>
 <template>
-  <div class="card">
+  <div class="details" :class="textType['position']">
     <p :class="textType['detail']">year</p>
     <p :class="textType['detail']">•</p>
     <div class="media">
       <img
-        :src="mediaIcon[`/src/assets/icons/icon-category-${mediaType[props.media]}.svg`]!.default"
-        :alt="`${mediaType[props.media]}
-        card
-        icon`"
+        v-if="props.media === 'movie'"
+        src="@/assets/icons/icon-category-movie.svg"
+        alt="movie card icon"
       />
-      <p :class="textType['detail']">{{ mediaType[props.media] }}</p>
+      <img
+        v-if="props.media === 'tvseries'"
+        src="@/assets/icons/icon-category-tv.svg"
+        alt="tv card icon"
+      />
+      <p :class="textType['detail']">{{ props.media }}</p>
     </div>
     <p :class="textType['detail']">•</p>
     <p :class="textType['detail']">rating</p>
@@ -46,7 +53,7 @@ const mediaIcon = import.meta.glob('@/assets/icons/icon-category-*.svg', {
 </template>
 <style lang="scss" scoped>
 @use '@/assets/styles/main.scss' as v;
-.card {
+.details {
   display: grid;
   grid-template-columns: repeat(5, max-content);
   gap: v.$spacing-0100;
@@ -59,5 +66,11 @@ const mediaIcon = import.meta.glob('@/assets/icons/icon-category-*.svg', {
 
 .title {
   grid-column: 1 / -1;
+}
+
+.inside {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
 }
 </style>
