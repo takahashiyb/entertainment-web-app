@@ -7,7 +7,7 @@ import TrendingGroup from '@/components/TrendingGroup.vue'
     <h2>Trending</h2>
     <div><TrendingGroup /></div>
     <h2>Recommended</h2>
-    <div><CardGroup /></div>
+    <div><CardGroup media-category="tv series" /></div>
   </section>
 </template>
 <style lang="scss" scoped>
