@@ -73,6 +73,7 @@ onBeforeMount(() => {
 .card {
   cursor: pointer;
   height: min-content;
+  z-index: 96;
 }
 
 .container__image {
@@ -119,6 +120,8 @@ img {
   padding: 12px 9px;
 
   border-radius: 9em;
+
+  z-index: 97;
 }
 
 .card:hover .play {

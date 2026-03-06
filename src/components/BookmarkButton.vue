@@ -28,6 +28,16 @@ label {
   position: absolute;
   top: 16px;
   right: 16px;
+
+  z-index: 98;
+}
+
+label:hover {
+  background-color: rgba(v.$white, 100%);
+
+  img {
+    filter: brightness(0);
+  }
 }
 
 input {
