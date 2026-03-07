@@ -29,15 +29,3 @@ data.isBookmarked = props.mediaBookmark
     />
   </div>
 </template>
-
-<style lang="scss" scoped>
-@use '@/assets/styles/main.scss' as v;
-
-.container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  scrollbar-width: none;
-
-  gap: v.$spacing-0200;
-}
-</style>
