@@ -8,6 +8,8 @@ const props = defineProps({
   cardType: { type: String, default: 'regular' },
 })
 
+const base = import.meta.env.BASE_URL
+
 let small
 
 let medium
@@ -42,9 +44,9 @@ onBeforeMount(() => {
   <div class="card" :class="{ trending: props.cardType === 'trending' }">
     <div class="container__image">
       <picture>
-        <source :srcset="large" media="(min-width: 1000px)" />
-        <source :srcset="medium" media="(min-width: 700px)" />
-        <img :src="small" alt="" />
+        <source :srcset="`${base + large}`" media="(min-width: 1000px)" />
+        <source :srcset="`${base + medium}`" media="(min-width: 700px)" />
+        <img :src="`${base + small}`" alt="" />
       </picture>
       <MediaCardDetails
         :mediaData="props.mediaData!"

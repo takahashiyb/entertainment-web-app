@@ -7,7 +7,7 @@ import { useDataStore } from './stores/data'
 const data = useDataStore()
 
 onBeforeMount(async () => {
-  const res = await fetch('/assets/data/data.json')
+  const res = await fetch(import.meta.env.BASE_URL + '/assets/data/data.json')
   data.json = await res.json()
 })
 </script>
