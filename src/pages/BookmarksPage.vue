@@ -15,12 +15,12 @@ const data = useDataStore()
   </section>
   <section v-if="data.searchText === ''">
     <h2>Bookmarked Movies</h2>
-    <div><CardGroup media-category="movie" /></div>
+    <div><CardGroup media-category="movie" media-bookmark /></div>
   </section>
 
   <section v-if="data.searchText === ''">
     <h2>Bookmarked TV Series</h2>
-    <div><CardGroup media-category="tv series" /></div>
+    <div><CardGroup media-category="tv series" media-bookmark /></div>
   </section>
 </template>
 
