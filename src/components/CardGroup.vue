@@ -28,6 +28,7 @@ const props = defineProps({
 
 <style lang="scss" scoped>
 @use '@/assets/styles/main.scss' as v;
+@use '@/assets/styles/functions.scss' as f;
 
 .container {
   display: grid;
@@ -35,5 +36,25 @@ const props = defineProps({
   scrollbar-width: none;
 
   gap: v.$spacing-0200;
+}
+
+@media (min-width: f.em(700)) {
+}
+
+@media (min-width: f.em(700)) {
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: v.$spacing-0400;
+  }
+}
+
+@media (min-width: f.em(1000)) {
+  .container {
+    grid-template-columns: repeat(4, 1fr);
+    width: calc(100dvw - f.em(170));
+
+    gap: v.$spacing-0500;
+  }
 }
 </style>

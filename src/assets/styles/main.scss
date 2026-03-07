@@ -112,7 +112,21 @@ h2 {
   letter-spacing: $lspacing-0;
 }
 
+// Container Style
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  scrollbar-width: none;
+
+  gap: $spacing-0200;
+}
+
+// Media Queries
+
 @media (min-width: f.em(700)) {
+  // Text presets
+
   h2 {
     font-size: $fsize-32;
     letter-spacing: $lspacing--0-5;
@@ -136,5 +150,21 @@ h2 {
 
   .text__details {
     font-size: $fsize-13;
+  }
+
+  // Container
+
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: $spacing-0400;
+  }
+}
+
+@media (min-width: f.em(1000)) {
+  .container {
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: $spacing-0500;
   }
 }

@@ -59,6 +59,7 @@ watch(
 
 <style lang="scss" scoped>
 @use '@/assets/styles/main.scss' as v;
+@use '@/assets/styles/functions.scss' as f;
 
 nav > ul {
   height: 100%;
@@ -78,5 +79,22 @@ nav ul li img:hover {
 
 nav ul li img.selected {
   filter: brightness(100);
+}
+
+@media (min-width: f.em(1000)) {
+  nav {
+    flex: 1;
+  }
+
+  nav > ul {
+    flex-direction: column;
+    gap: v.$spacing-0500;
+  }
+
+  img {
+    width: 32px;
+    height: auto;
+    aspect-ratio: 1;
+  }
 }
 </style>
