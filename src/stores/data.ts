@@ -13,7 +13,9 @@ export const useDataStore = defineStore('data', () => {
 
   const searchResult = computed(() => {
     return json
-      .value!.filter((media) => media.title.trim().toLowerCase().includes(searchText.value, 0))
+      .value!.filter((media) =>
+        media.title.trim().toLowerCase().includes(searchText.value.toLowerCase(), 0),
+      )
       .filter(
         (media) => category.value === 'any' || media.category.toLowerCase() === category.value,
       )
