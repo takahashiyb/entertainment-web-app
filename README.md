@@ -1,48 +1,59 @@
-# .
+# Frontend Mentor - Entertainment web app solution
 
-This template should help get you started developing with Vue 3 in Vite.
+This is a solution to the [Entertainment web app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/entertainment-web-app-J-UhgAW1X). Frontend Mentor challenges help you improve your coding skills by building realistic project.
 
-## Recommended IDE Setup
+## Table of contents
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
-## Recommended Browser Setup
+## Overview
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+### The challenge
 
-## Type Support for `.vue` Imports in TS
+Users should be able to:
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+- View the optimal layout for the app depending on their device's screen size
+- See hover states for all interactive elements on the page
+- Navigate between Home, Movies, TV Series, and Bookmarked Shows pages
+- Add/Remove bookmarks from all movies and TV series
+- Search for relevant shows on all pages
 
-## Customize configuration
+### Links
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+- Solution URL: [Github Repository](https://github.com/takahashiyb/entertainment-web-app)
+- Live Site URL: [Live site](https://takahashiyb.github.io/entertainment-web-app/#/)
 
-## Project Setup
+## My process
 
-```sh
-npm install
-```
+### Built with
 
-### Compile and Hot-Reload for Development
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- CSS Grid
+- Mobile-first workflow
+- SASS - CSS Preprocessor
+- Vue - Javascript Framework
+- Vue-router - Vue's routing library
+- Pinia - Vue state manager
+- Typescript - statically-typed superset of JavaScript
 
-```sh
-npm run dev
-```
+### What I learned
 
-### Type-Check, Compile and Minify for Production
+I had issues with the layout due to grids and flex-boxes not working well with positions absolute and relative. A mix of min-content and proper setting of fixed widths and heights to inform the exact effect I needed to achieve the design.
 
-```sh
-npm run build
-```
+### Continued development
 
-### Lint with [ESLint](https://eslint.org/)
+I am most proud of the fact that I properly planned the whole thing before even writing a single code. There may be some parts that did not go as planned but it was minimized due to adequate planning. So I am going to be applying this for future projects
 
-```sh
-npm run lint
-```
+## Author
+
+- Frontend Mentor - [@takahashiyb](https://www.frontendmentor.io/profile/takahashiyb)
